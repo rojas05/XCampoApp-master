@@ -77,9 +77,11 @@ const ProfileTemplate = ({ userName, profileImage, bannerImage, role }) => {
             </View>
           </View>
 
+          {/*
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Editar Perfil</Text>
           </TouchableOpacity>
+          */}
         </View>
 
         <Text style={styles.description}>

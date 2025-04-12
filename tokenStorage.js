@@ -121,3 +121,18 @@ export async function fetchWithToken(url, options = {}) {
     throw error;
   }
 }
+
+export async function clearData() {
+  try {
+    const keysToDelete = ["accessToken", "refreshToken","id", "userInfo", "client_id"]; // 🔑 Ajusta aquí las claves que estás usando
+
+    for (const key of keysToDelete) {
+      await SecureStore.deleteItemAsync(key);
+    }
+
+    console.log("✅ Datos seguros eliminados correctamente.");
+    // Aquí podrías redirigir al login o reiniciar algún estado
+  } catch (e) {
+    console.error("❌ Error al eliminar datos de SecureStore:", e);
+  }
+};
